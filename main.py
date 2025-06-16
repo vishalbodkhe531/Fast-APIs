@@ -13,3 +13,16 @@ class Student(BaseModel):
 
 
 students:List[Student] = [] 
+
+
+
+# decorators 
+@app.get("/")
+def readRoot():
+    return {"message" : "Welcome To Python Fast-API"}
+
+
+@app.get("/all-students")
+def getStudents():
+    return students
+
