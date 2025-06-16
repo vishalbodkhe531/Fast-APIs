@@ -26,3 +26,7 @@ def readRoot():
 def getStudents():
     return students
 
+@app.post("/all-students")
+def addStudent(student : Student):
+    students.append(student)
+    return student
