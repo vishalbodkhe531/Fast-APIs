@@ -42,3 +42,10 @@ def updateStudent(studentId:int,updatedStudent : Student):
     return {"Error" : "Student not found !!"}    
 
 
+@app.delete("/delete-student/{studentId}")
+def deleteStudent(studentId : int):
+    for index,item in enumerate(students):
+        if item.id == studentId:
+            deletedStudent =  students.pop(index)
+            return deletedStudent
+    return {"Error" : "Student not found !!"}    
