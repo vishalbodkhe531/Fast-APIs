@@ -30,3 +30,15 @@ def getStudents():
 def addStudent(student : Student):
     students.append(student)
     return student
+
+
+
+@app.put("/update-student/{studentId}")
+def updateStudent(studentId:int,updatedStudent : Student):
+    for index,item in enumerate(students):
+        if item.id == studentId:
+            students[index] = updatedStudent
+            return updatedStudent
+    return {"Error" : "Student not found !!"}    
+
+
